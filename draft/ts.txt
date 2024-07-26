@@ -1,0 +1,15 @@
+1. 错误统计
+err Error: error:0308010C:digital envelope routines::unsupported 
+ts(2307) jsconfig
+
+1. 生成  .d.ts
+ts-morph
+
+2. extends as 输入参数（约束）
+
+3. ExtractPropType 抽取，提取props
+
+4. ts,js 的 typeof 位置与用法都不一样； 
+
+5. 一些语法的检测
+TS2339: Property 'size' does not exist on type '{}'.

@@ -1,0 +1,42 @@
+1. 创建 tag 
+git tag vue-3.2.20
+2. 上传到github, 生成tag分支
+git push origin vue-3.2.20
+3. 丢弃代码
+git checkout .
+4. 查看分支
+git branch -a 
+5. 切换分支
+git checkout main
+6. 合并分支
+git merge dev
+7. 创建分支
+git checkout -b new_branch
+8. 删除分支
+git branch -d new_branch
+9. 创建远程分支
+git push -u origin new_branch
+10.  删除远程分支
+git push origin --delete new_branch
+11. 添加到暂存
+git add .
+12. 查看文件状态
+git status
+13. 提交代码
+git commit
+14. 上传代码
+git push
+15. 拉取代码
+git pull
+16. 查看日志
+git log
+17.  查看某个文件的记录
+git log -- package.json
+18. 回退，提交记录被清掉
+git reset --hard commitId
+git push -f 强行推上去
+19. 回滚，保留提交记录
+git revert -n commitId
+git commit -m commitId
+git push
+

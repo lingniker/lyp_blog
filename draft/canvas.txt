@@ -1,0 +1,54 @@
+创建 canvas 对象；
+var canvas = document.createElement("canvas"); // 创建节点
+canvas.width = 120; // 设置宽
+canvas.height = 64; // 设置高
+var ctx = canvas.getContext('2d'); // 获取内容
+
+1. 字体样式
+
+  ctx.font = 'normal 20px Arial';  // 设置样式，大小: 20px，30px; 
+                                            			// 字体: Arial, Georgia, verdana
+                                           			 // 粗体: normal, bold, bolder, lighter,100,600,900
+                                            		         //  斜体: italic, oblique
+  ctx.textAlign = 'center'; // 字体对齐，// start, end, left, center, right
+  ctx.textBaseline = 'alphabetic' // alphabetic, bottom, hanging, ideographic, middle, top
+  ctx.fillText('大家', 10, 10); //填充字体;  内容, x偏移位置, y偏移位置
+
+  ctx.strokeText()
+
+2. 物体中心旋转
+  ctx.translate(centerX, centerY); // 设置旋转中心，会将物体偏移到中心位置
+  ctx.rotate(deg * Math.PI / 180)  // 执行旋转；
+  ctx.translate(-centerX, -centerY) // 将物体移动回来；
+
+3. 状态的保存 translate() scale() rotate()
+  ctx.save(); // 保存状态，以免影响其它物体、
+  ctx.translate(0,0); // 偏移. x 偏移， y偏移
+  ctx.scale(1); // 缩放 
+  ctx.rotate(0 * Math.PI / 180); // 旋转角度
+  ctx.restore(); // 恢复状态
+
+4. 开启路径,关闭路径   fill() fillRect() stroke() 
+  ctx.beginPath(); // 开启路径
+  ctx.fillRect(rect.x, rect.y, rect.width, rect.height);
+  ctx.closePath(); // 关闭路径
+
+5. 画线，画框 stroke() strokeRect(）
+  ctx.strokeStyle = 'red' // 样式
+  ctx.lineWidth = 2 // 线宽
+  ctx.moveTo(150,20); // 起始地方 x, y
+  ctx.lineTo(150,170); // 终点 x, y
+  ctx.stroke() // 执行绘制
+  ctx.strokeRect(0, 0, 120, 64); // 描边四边形； x位置， y位置，宽长，高长
+
+6. 生成图片;  toDataURL()
+  var dataURL = canvas.toDataURL();
+
+7. 清空画布 clearRect()
+  ctx.clearRect()
+
+8. 填充 fillRect()
+  ctx.fillRect(0,0,10,10) // 填充四边形；x位置， y位置，宽长，高长
+
+9. 测量字体的大小 ctx.measureText()
+ 

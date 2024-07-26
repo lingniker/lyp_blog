@@ -1,0 +1,5 @@
+1. 添加 host 代理 
+ C:\Windows\System32\drivers\etc  hosts 
+127.0.0.0 my.com
+windows 刷新 
+# ipconfig /flushdns

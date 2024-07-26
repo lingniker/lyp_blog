@@ -1,0 +1,41 @@
+// withDefaults
+// defineEmits
+// defineProps
+
+
+// defineOptions
+
+1. vue3.2 defineoptions is not defined
+npm install @vue-macros/volar unplugin-vue-define-options --save-dev
+
+// 修改 webpack.config.js
+module.exports = {
+  /* ... */
+  plugins: [require('unplugin-vue-define-options/webpack')()],
+}
+
+// 修改 tsconfig.json
+{
+  "compilerOptions": {
+    // ...
+    "types": ["unplugin-vue-define-options/macros-global" /* ... */]
+  }
+}
+
+
+  - 升级 vue为3.3 以上
+
+
+
+2. (node:12976) ExperimentalWarning: `--experimental-loader` may be removed in the future; instead use `register()`:
+--import 'data:text/javascript,import { register } from "node:module"; import { pathToFileURL } from "node:url"; register("file%3A///E%3A/f/myCode/ling_private_frontend/node_modules/node-dev/lib/loaders/load.mjs", pathToFileURL("./"));'
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+ node-dev  7版本升到8版本
+
+3. [@vue/compiler-sfc] `defineEmits` is a compiler macro and no longer needs to be imported 
+   @vue/compiler-sfc 3.2.20 升级到 3.4.26
+  
+
+4. Uncaught TypeError: Cannot read properties of null (reading 'isCE')
+vue 版本的不一样

@@ -1,0 +1,12 @@
+1. object.entries({a:1})  将对象转换成可 map 数组；
+object.entries({a:1}).map(([key,val])=>[key,val]);
+
+2. for-in 遍历对象
+  for(var key in {a:1,b:2}) {
+    console.log(key); // a b
+  }
+
+3. for-of  遍历数组
+  for(var val of [5,6]) {
+    console.log(val); // 5,6
+  }

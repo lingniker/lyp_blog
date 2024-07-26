@@ -1,0 +1,81 @@
+TypeError: Invalid value used in weak set
+
+1. 类型错误：不能析构属性 'config' ，没有定义
+TypeError: Cannot destructure property 'config' of 'undefined' as it is undefined
+相关的 ts-jest 包没有。
+需要安装 ts-jest 包，  
+由于     "vue-jest": "^5.0.0-alpha.10" 导致 ts-jest 的相关依赖安装不了
+npm uninstall vue-jest
+
+npm install vue3-jest ts-jest --save-dev
+
+
+2. 语法错误
+SyntaxError: Cannot use import statement outside a module
+
+
+3. @vue/vue3-jest jest babel-jest 依赖可能会存在问题
+@vue/vue3-jest@28 jest@28 babel-jest@28
+还需要 jest-environment-jsdom 包
+
+
+4. @vue/test-utils 引用错误
+import { shallowMount } from '@vue/test-utils'报错ReferenceError: Vue is not defined
+
+"jest": {
+    "testEnvironmentOptions": {
+        "customExportConditions": ["node", "node-addons"]
+    },
+}
+
+
+5. @vue/unit-test mount 加载组件
+var wrapper = mount();
+var vm = wrapper.vm  //获取 vm 的值
+wrapper.classes() // 获取class数组
+wrapper.classes('my-span') // 传入字符串，验证是否存在
+var firstNodeWrapper = wrapper.find('.lx-tree-node') // 查找节点
+firstNodeWrapper.trigger('click') // 触发click
+wrapper.find('.el-tree').exists() // 是否存在 返回true/false boolean
+
+6.  jest expect 期望 属性
+
+expect(vm.rotate).toBe(50); //成为
+expect(vm.rotate).toContain('class1');// 包含 ['class1', 'class2']
+expect(vm.gap).toEqual([0,1]) // 相等
+expect(wrapper.emitted().greet).toHaveLength(2)
+expect(wrapper.find('.el-tree').exists()).toBeTruthy() // 是否是真
+
+
+7. @vue/unit-test input 的点击事件不管用了 使用 setValue
+seconNodeCheckboxWrapper.trigger('click')
+seconNodeCheckboxWrapper.find('input').setValue(true)
+
+
+5. @vue/unit-test mount 加载组件
+find().exists() findAll trigger classes findComponent text
+input 输入框 setValue
+
+wrapper.emitted()
+wrapper.setProps({ value: 80 })
+
+rootNode.element.parentNode.getAttribute('aria-expanded')
+childWrapper.find('input').element.checked
+
+6.  jest expect 期望 属性
+toBeTruthy toEqual toBe toBeFalsy toHaveLength  toBeDefined
+
+toBeCalled();
+toHaveBeenCalled();
+toHaveBeenCalledTimes(1);
+
+使用 jest.fn
+var fn = jest.fn()
+fn.mock.calls.length
+
+var spyFn = jestspyOn(fetch,'getProductList');
+
+
+region1.dispatchEvent(new MouseEvent('click'))
+region1.dispatchEvent(new KeyboardEvent('keydown', { code: 'ArrowDown', bubbles: true, cancelable: false }))
+

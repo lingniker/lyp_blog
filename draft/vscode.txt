@@ -1,0 +1,5 @@
+1. 警告: 找不到模块 './app.vue' 或其相应的类型声明。 ts(2307)
+Cannot find module '@lixi/utils/dom' or its corresponding type declarations.ts(2307)
+setting jsconfig 
+js/ts> implicit Project Config: Check JS 
+启用或禁用JavaScript 文件的语义检查。 jsconfig.json 或 teconfig.json 文件将覆盖此设置。

@@ -1,0 +1,22 @@
+1. 测试 监听 focus
+(function() {
+    // 保存原始的focus函数
+    var originalFocus = HTMLElement.prototype.focus;
+ 
+    // 重写focus函数
+    HTMLElement.prototype.focus = function() {
+        var caller = '';
+        try {
+            // 尝试获取调用者的信息
+            throw new Error();
+        } catch (e) {
+            // 获取堆栈信息
+            var stack = e.stack.split('\n');
+            // 通常堆栈的第二行包含调用者信息
+            caller = stack[2].trim();
+        }
+        console.log('Focus called by:', caller);
+        // 调用原始的focus函数
+        originalFocus.apply(this, arguments);
+    };
+})();

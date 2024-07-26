@@ -1,0 +1,9 @@
+1. scp 在不同端口的数据传输
+scp -P 2222 file.txt user@remotehost:remote/directory
+
+该项目 分为组件啊模块，还有项目代码模块，
+1. 组件库包括: 文档的展示，单元测试模块，样式模块，项目的启动，项目的打包
+2. 使用的技术栈， jest, webpack5, vue3, typescript, sass, markdown, sfc， npm 包的发布
+3. 难点就是依赖太严重了, 在配置 jest ts vue3  的 bable 时，报出的错，根据爆出的错去解决问题，
+并不是最根本的解决方案。最根本的就是 npm 包对应版本依赖的问题。
+ node模块化问题 commodjs， esmodel，amd, umd

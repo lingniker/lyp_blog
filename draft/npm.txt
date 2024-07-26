@@ -1,0 +1,95 @@
+npm install -g cnpm --registry=https://registry.npm.taobao.org
+
+npm config set registry https://registry.npm.taobao.org
+npm config set registry https://registry.npmjs.org
+
+npm config get registry
+
+pm2 start ./bin/run --name ys-fusion
+
+npm config ls
+
+1. 下载node包, 
+npm install <name> --save-dev  // 保存到--save  package.js  -dev 开发环境
+
+2. 卸载 node 包
+npm uninstall
+
+3. npm 查看版本号
+npm list lodash  --depth=0 // 不分层
+
+4. 是否生成 cdn 
+unpkg: true
+
+5. lodash js的工具库
+
+6. @popperjs/core 弹出框js
+
+7. async-validator 校验数据
+
+8. mitt  vue的状态管理
+
+9 "sideEffects": false 副作用  没有 tree-shaking
+
+10 pakage.json 
+workspaces  会进行软链接
+
+11. Not implemented 不能进行，
+Error: Not implemented: HTMLCanvasElement.prototype.getContext (without installing the canvas npm package)
+npm install jest-canvas-mock --save-dev
+{ 
+  jest: {
+    testEnvironment: "jsdom",
+    "setupFiles":  ["jest-canvas-mock"]
+  }
+}
+
+12. `isModuleDeclaration` has been deprecated, please migrate to `isImportOrExportDeclaration`
+安装 babel @babel/types  由7.24.0 转为 7.21.2
+npm install @babel/types@^7.21.2 --save-dev
+也有可能是 lodash 的错误
+
+
+13. // 数据化开发日常
+digital envelope routines::unsupported
+
+set NODE_OPTIONS=--openssl-legacy-provider
+
+14. 查看现在所有可以下载的node版本
+nvm list available
+nvm list 
+nvm install 20.11.1
+nvm use 20.11.1
+
+15. 升级 npm 包版本
+npm install node-dev@latest
+
+16. 实验性警告
+ExperimentalWarning: `--experimental-loader` may be removed in the future;
+升级 node-dev
+npm install node-dev@latest
+
+
+17. nvm 查看可下载的 node 版本
+
+nvm list available
+
+18. 设置 默认 版本
+nvm alias default 14.17.0  # 设置14.17.0版本为默认版本
+
+
+
+
+
+19. react 不是 esmodule
+possible exports: __esModule
+
+(module has no exports)
+
+possible exports: default 原因是没有写对代码
+
+最终的问题原因是  webpack-dev-server 不能去解析 node_module 下的react. 现在加上 include 去解析 react
+
+问题就是 linux node 与 window node 不统一。 linux node 会对 node_modules 里面的文件进行转换。 而 windows node 不会对 node_modules 里面的文件进行转换。 
+
+
